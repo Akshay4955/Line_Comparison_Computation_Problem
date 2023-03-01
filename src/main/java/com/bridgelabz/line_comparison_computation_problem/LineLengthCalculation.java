@@ -2,7 +2,7 @@ package com.bridgelabz.line_comparison_computation_problem;
 
 public class LineLengthCalculation {
     float x1, y1, x2, y2;
-    Double length;
+    double length;
 
     public static void main(String[] args) {
         LineLengthCalculation lineLengthCalculation = new LineLengthCalculation();
@@ -18,8 +18,15 @@ public class LineLengthCalculation {
         lineLengthCalculation1.x2 = 30.87f;
         lineLengthCalculation1.y2 = 45.34f;
         lineLengthCalculation1.length = lineLengthCalculation1.getLength();
+        lineLengthCalculation1.compareTo(lineLengthCalculation.length, lineLengthCalculation1.length);
+    }
 
-        switch (lineLengthCalculation.length.compareTo(lineLengthCalculation1.length)) {
+    double getLength() {
+        return Math.sqrt(Math.pow((x1 - x2), 2) + Math.pow((y1 - y2), 2));
+    }
+
+    void compareTo(Double lineLengthCalculation, Double lineLengthCalculation1) {
+        switch (lineLengthCalculation.compareTo(lineLengthCalculation1)) {
             case 0:
                 System.out.println("Both Lines are Equal");
                 break;
@@ -31,9 +38,4 @@ public class LineLengthCalculation {
                 break;
         }
     }
-
-    double getLength() {
-        return Math.sqrt(Math.pow((x1 - x2), 2) + Math.pow((y1 - y2), 2));
-    }
-
 }
